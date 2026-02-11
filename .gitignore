@@ -1,6 +1,8 @@
 # Dependencies
 /vendor/
 **/node_modules/
+plugins/
+uploads/
 
 # WordPress core (auto-installed in Dev Container)
 /wp/
