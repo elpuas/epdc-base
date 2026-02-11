@@ -1,0 +1,2 @@
+# This file ensures the upgrade directory exists in the repository
+# WordPress uses this directory during automated updates
