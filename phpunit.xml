@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+		 colors="true"
+		 stopOnFailure="false"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd">
+	<testsuites>
+		<testsuite name="EPDC Test Suite">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+	
+	<source>
+		<include>
+			<directory suffix=".php">src</directory>
+			<directory suffix=".php">themes</directory>
+		</include>
+		<exclude>
+			<directory>vendor</directory>
+			<directory>node_modules</directory>
+			<directory suffix=".js">themes/*/build</directory>
+		</exclude>
+	</source>
+	
+	<coverage>
+		<report>
+			<html outputDirectory="tests/coverage" lowUpperBound="35" highLowerBound="70"/>
+			<text outputFile="php://stdout" showUncoveredFiles="false"/>
+		</report>
+	</coverage>
+	
+	<logging>
+		<junit outputFile="tests/logs/junit.xml"/>
+	</logging>
+</phpunit>

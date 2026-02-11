@@ -26,7 +26,7 @@
 
 	"autoload": {
 		"psr-4": {
-			"EPDC\\": "plugins/"
+			"EPDC\\": "src/"
 		}
 	},
 
@@ -41,7 +41,7 @@
 	"scripts": {
 		"lint": "phpcs",
 		"fix": "phpcbf",
-		"stan": "phpstan analyse plugins",
+		"stan": "phpstan analyse src themes",
 		"test": "phpunit"
 	},
 

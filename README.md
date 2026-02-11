@@ -76,12 +76,13 @@ npm run build
 
 ```
 wp-content/
-├── plugins/           # WordPress plugins (managed via Composer)
+├── src/              # Custom EPDC namespaced PHP classes
+├── plugins/          # WordPress plugins (managed via Composer)
 ├── themes/           # Custom themes
 ├── uploads/          # Media uploads
 ├── composer.json     # PHP dependencies and scripts
-├── vendor/          # Composer dependencies
-└── README.md        # This file
+├── vendor/           # Composer dependencies
+└── README.md         # This file
 ```
 
 ## Development Workflow
@@ -125,6 +126,27 @@ composer require wpackagist-plugin/plugin-name
 
 # Example: Adding Contact Form 7
 composer require wpackagist-plugin/contact-form-7
+```
+
+### Custom PHP Classes
+
+Store your custom namespaced PHP classes in the `src/` directory using the `EPDC\` namespace:
+
+```php
+<?php
+namespace EPDC;
+
+class MyService {
+    public function init(): void {
+        // Your code here
+    }
+}
+```
+
+After adding new classes, refresh the autoloader:
+
+```bash
+composer dump-autoload
 ```
 
 ### Code Standards

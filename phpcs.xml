@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<ruleset name="EPDC WordPress Coding Standards">
+	<description>WordPress Coding Standards for EPDC project</description>
+
+	<!-- Scan these files and directories -->
+	<file>src</file>
+	<file>themes</file>
+
+	<!-- Exclude patterns -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<!-- Include WordPress Coding Standards -->
+	<rule ref="WordPress">
+		<!-- Allow short array syntax -->
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+		
+		<!-- Exclude filename rules for themes -->
+		<exclude name="WordPress.Files.FileName"/>
+		
+		<!-- Allow multiple classes per file for development -->
+		<exclude name="Generic.Files.OneClassPerFile"/>
+		<exclude name="Generic.Files.OneObjectStructurePerFile"/>
+		
+		<!-- Relax some comment rules -->
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+		<exclude name="Generic.Formatting.MultipleStatementAlignment"/>
+	</rule>
+
+	<!-- Text Domain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="epdc-base"/>
+				<element value="default"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Minimum PHP and WordPress versions -->
+	<config name="minimum_supported_wp_version" value="6.0"/>
+	<config name="testVersion" value="8.0-"/>
+
+	<!-- Show progress and use colors -->
+	<arg value="p"/>
+	<arg value="s"/>
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+
+	<!-- Check maximum line length -->
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="120"/>
+			<property name="absoluteLineLimit" value="0"/>
+		</properties>
+	</rule>
+</ruleset>

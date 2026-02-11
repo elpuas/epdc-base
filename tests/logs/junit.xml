@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/workspaces/wp-content/phpunit.xml" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.003792">
+    <testsuite name="EPDC Test Suite" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.003792">
+      <testsuite name="BaseServiceTest" file="/workspaces/wp-content/tests/BaseServiceTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.003792">
+        <testcase name="test_base_service_init" file="/workspaces/wp-content/tests/BaseServiceTest.php" line="18" class="BaseServiceTest" classname="BaseServiceTest" assertions="1" time="0.003792"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
