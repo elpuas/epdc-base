@@ -1,0 +1,28 @@
+/**
+ * Block editor functional styles
+ * Editor-specific functionality (global styles handled by theme.json)
+ */
+
+/* Block editor alignment helpers */
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+  max-width: var(--wp--style--global--wide-size, 1200px);
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+  max-width: none;
+}
+
+/* Custom block editor enhancements */
+.editor-styles-wrapper .has-fade-in-animation {
+  position: relative;
+}
+
+.editor-styles-wrapper .has-fade-in-animation::after {
+  content: "✨ Fade In";
+  position: absolute;
+  top: -1.5rem;
+  right: 0;
+  font-size: 0.75rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
