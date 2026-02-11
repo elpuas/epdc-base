@@ -1,0 +1,10 @@
+{
+	"id": "epdc-wordpress",
+	"version": "1.0.0",
+	"name": "EPDC WordPress + WP-CLI + MariaDB + Xdebug",
+	"description": "Installs MariaDB, WP-CLI, WordPress bootstrap scripts, and Xdebug.",
+	"installsAfter": [
+		"ghcr.io/devcontainers/features/php",
+		"ghcr.io/devcontainers/features/common-utils"
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "epdc-base",
+  "version": "1.0.0",
+  "description": "Base Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ElPuas Digital Crafts",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^31.4.0"
+  }
+}

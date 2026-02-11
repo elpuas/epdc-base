@@ -1,0 +1,40 @@
+{
+	"name": "EPDC WP Content Base",
+	"image": "mcr.microsoft.com/devcontainers/base:debian",
+	"features": {
+		"ghcr.io/devcontainers/features/php:1": {
+			"version": "8.3"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "20"
+		},
+		"ghcr.io/devcontainers/features/mysql:1": {
+			"version": "8.0"
+		},
+		"ghcr.io/devcontainers/features/composer:1": {},
+		"./features/epdc-wordpress": {}
+	},
+	"forwardPorts": [8000],
+	"remoteUser": "vscode",
+	"postCreateCommand": "composer install && npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"bmewburn.vscode-intelephense-client",
+				"ikappas.phpcs",
+				"xdebug.php-debug"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.insertSpaces": false,
+				"editor.tabSize": 4,
+				"prettier.useTabs": true,
+				"prettier.singleQuote": true,
+				"prettier.semi": false,
+				"intelephense.environment.phpVersion": "8.3"
+			}
+		}
+	}
+}

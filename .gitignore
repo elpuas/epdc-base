@@ -1,0 +1,21 @@
+# Dependencies
+/vendor/
+**/node_modules/
+
+# WordPress core (auto-installed in Dev Container)
+/wp/
+
+# Logs
+*.log
+/logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Composer lockfile (template repo)
+/composer.lock

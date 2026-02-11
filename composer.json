@@ -1,0 +1,59 @@
+{
+	"name": "epdc/wp-content",
+	"type": "project",
+	"description": "EPDC WordPress wp-content base",
+	"license": "proprietary",
+
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+
+	"require": {
+		"composer/installers": "^2.3",
+		"wpackagist-plugin/query-monitor": "^3.14"
+	},
+
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.9",
+		"wp-coding-standards/wpcs": "^3.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpstan/phpstan": "^1.11",
+		"phpunit/phpunit": "^10.5"
+	},
+
+	"autoload": {
+		"psr-4": {
+			"EPDC\\": "plugins/"
+		}
+	},
+
+	"extra": {
+		"installer-paths": {
+			"plugins/{$name}/": [
+				"type:wordpress-plugin"
+			]
+		}
+	},
+
+	"scripts": {
+		"lint": "phpcs",
+		"fix": "phpcbf",
+		"stan": "phpstan analyse plugins",
+		"test": "phpunit"
+	},
+
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
+		},
+		"optimize-autoloader": true,
+		"sort-packages": true
+	},
+
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}
