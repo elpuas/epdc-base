@@ -31,7 +31,7 @@ The dev container will automatically:
 ### 2. Access Your Site
 
 Once the container is running:
-- **WordPress site**: http://localhost:8080
+- **WordPress site**: http://localhost:8000
 - **Database**: Available internally to the container
 - **File system**: Your `wp-content` changes are automatically synced
 
