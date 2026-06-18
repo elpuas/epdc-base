@@ -1,5 +1,7 @@
 FROM wordpress:php8.3-apache
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 # Install system packages including MariaDB server
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
@@ -24,6 +26,9 @@ RUN curl -fsSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 	&& php composer-setup.php --quiet --install-dir=/usr/local/bin --filename=composer \
 	&& rm composer-setup.php
+
+# Development-friendly PHP defaults.
+RUN printf "memory_limit=512M\nupload_max_filesize=64M\npost_max_size=64M\n" > /usr/local/etc/php/conf.d/devcontainer.ini
 
 # Add vscode user and give sudo access
 RUN useradd -ms /bin/bash vscode \

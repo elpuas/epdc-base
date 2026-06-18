@@ -14,22 +14,23 @@
 		}
 	},
 
-	"workspaceFolder": "/workspaces/wp-content",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
-		"php.suggest.basic": false // avoids duplicate autocomplete
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"php.suggest.basic": false
+			},
+			"extensions": [
+				"xdebug.php-pack",
+				"wordpresstoolbox.wordpress-toolbox",
+				"johnbillion.vscode-wordpress-hooks"
+			]
+		}
 	},
 
-	// Add the IDs of any extensions you want installed.
-	"extensions": [
-		"felixfbecker.php-pack",
-		"wordpresstoolbox.wordpress-toolbox",
-		"johnbillion.vscode-wordpress-hooks"
-	],
-
 	// Sets up WordPress on container start.
-	"postStartCommand": "sudo service mariadb start && sleep 5 && .devcontainer/wp-setup.sh && sudo service apache2 restart",
+	"postStartCommand": ".devcontainer/start-wp.sh",
 	"remoteUser": "vscode"
 }
