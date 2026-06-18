@@ -5,6 +5,7 @@
 # Third-party plugins and uploads (managed separately)
 plugins/
 uploads/
+.devcontainer/data/
 
 # Build artifacts
 **/build/
@@ -15,6 +16,8 @@ uploads/
 # Logs
 *.log
 /logs/
+/tests/logs/
+/tests/coverage/
 
 # OS files
 .DS_Store
@@ -26,3 +29,7 @@ Thumbs.db
 
 # Composer lockfile (template repo)
 /composer.lock
+
+# Local caches
+/.phpunit.result.cache
+/package-lock.json
