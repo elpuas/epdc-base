@@ -75,6 +75,7 @@ The running WordPress root is `/var/www/html`. The repository is mounted at `/wo
 Run these inside the Dev Container:
 
 ```bash
+wp core version
 php -v
 node -v
 composer --version

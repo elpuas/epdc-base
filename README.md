@@ -54,6 +54,8 @@ The bootstrap script will:
 Composer commands run from the repository root:
 
 ```bash
+wp core version
+wp user list
 composer install
 composer dump-autoload
 composer run lint
